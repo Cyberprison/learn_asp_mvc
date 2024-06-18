@@ -1,0 +1,32 @@
+﻿@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+
+<main>
+    <h3>Покупатели интернет магазина PhoneMarket</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <td>ФИО</td>
+                <td>email</td>
+                <td>адрес</td>
+            </tr>
+        </thead>
+
+        <tbody>
+            @{
+                foreach (var purchases in ViewBag.Purchases)
+                {
+                    <tr>
+                        <td>@purchases.FIO</td>
+                        <td>@purchases.Email</td>
+                        <td>@purchases.Address</td>
+                    </tr>
+                }
+            }
+
+        </tbody>
+
+    </table>
+</main>

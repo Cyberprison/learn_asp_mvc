@@ -43,5 +43,17 @@ namespace learn_asp_mvc.Controllers
 
             return $"Уважаемый {purchase.FIO}, с вами скоро свяжутся!";
         }
+
+        [HttpGet]
+        public ActionResult Purchase()
+        {
+            //извлекаем данные из таблицы Purchase
+            IEnumerable<Purchase> purchases = phoneContext.Purchases;
+
+            //записываем Purchase в динамическое свойство ViewBag
+            ViewBag.Purchases = purchases;
+
+            return View();
+        }
     }
 }
