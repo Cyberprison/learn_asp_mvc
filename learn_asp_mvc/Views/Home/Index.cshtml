@@ -1,50 +1,40 @@
-﻿@{ 
+﻿@{
     //для представления не используется мастер страница
-    Layout = null;
-
+    Layout = "/Views/Shared/_Layout.cshtml";
+    
 
 }
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Index</title>
-    </head>
-    
-    <body>
-        <main>
-            <h3>Товары интернет магазина PhoneMarket</h3>
+<main>
+    <h3>Товары интернет магазина PhoneMarket</h3>
 
-            <table>
-                <thead>
-                    <tr>
-                        <td>Название</td>
-                        <td>Производитель</td>
-                        <td>Цена (руб)</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                </thead>
+    <table>
+        <thead>
+            <tr>
+                <td>Название</td>
+                <td>Производитель</td>
+                <td>Цена (руб)</td>
+                <td>&nbsp;</td>
+            </tr>
+        </thead>
 
-                <tbody>
-                    @{ 
-                        foreach (var phone in ViewBag.Phones)
-                        {
+        <tbody>
+            @{
+                foreach (var phone in ViewBag.Phones)
+                {
                     <tr>
                         <td>@phone.Name</td>
                         <td>@phone.Producer</td>
                         <td>@phone.Price</td>
                         <td><a href="/Home/Buy/@phone.Id">Купить</a></td>
                     </tr>
-                        }
-                    }
+                }
+            }
 
-                </tbody>
+        </tbody>
 
-            </table>
+    </table>
 
-        </main>
-    </body>
-
-</html>
+</main>
 
 
